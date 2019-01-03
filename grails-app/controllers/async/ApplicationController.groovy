@@ -7,12 +7,15 @@ class ApplicationController {
 	
 	def index(){
 		withClosure{ obj ->
-			[obj: obj]
+			render "Sent"
 		}
+
+		render "Sent"
 	}
 
 	def send(){
-		emailsService.send("croteau.mike@gmail.com", "delete@mail.datatundra.com", "Hello", "World")
+		emailService.send("croteau.mike@gmail.com", "delete@mail.datatundra.com", "Hello", "World")
+		render "Sent"
 	}
 }
 
