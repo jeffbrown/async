@@ -1,21 +1,18 @@
 package async
 
-@Mixin(BaseController)
-class ApplicationController {
+class ApplicationController implements BaseController {
 
-	def emailService
-	
-	def index(){
-		withClosure{ obj ->
-			render "Sent"
-		}
+    def index() {
+        withClosure { obj ->
+            render "Sent"
+        }
 
-		render "Sent"
-	}
+        render "Sent"
+    }
 
-	def send(){
-		emailService.send("croteau.mike@gmail.com", "delete@mail.datatundra.com", "Hello", "World")
-		render "Sent"
-	}
+    def send() {
+        emailService.send("croteau.mike@gmail.com", "delete@mail.datatundra.com", "Hello", "World")
+        render "Sent"
+    }
 }
 
